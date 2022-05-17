@@ -1,6 +1,8 @@
 from res import MENU, resources
 
 # TODO 5 make report function which prints.
+
+
 def report(money, w, m, c):
     print(f"Water = {w}ml\nMilk = {m}ml\nCoffee = {c}g\nMoney = ${money}")
 
@@ -17,7 +19,7 @@ def checkres(coffee, curr_water, curr_milk, curr_coffee):
     if curr_water < req_water:
         print("Sorry there's not enough water")
         return req_water, req_milk, req_coffee, False
-    if curr_milk < req_milk :
+    if curr_milk < req_milk:
         print("Sorry there's not enough milk")
         return req_water, req_milk, req_coffee, False
     if curr_coffee < req_coffee:
@@ -25,8 +27,10 @@ def checkres(coffee, curr_water, curr_milk, curr_coffee):
         return req_water, req_milk, req_coffee, False
 
     return req_water, req_milk, req_coffee, True
-    
+
 # TODO 3 Print input the money, quarter, dime, nickle, penny.
+
+
 def check_money(price):
     quarter = (0.25 * int(input("Insert quarter : ")))
     dime = (0.10 * int(input("Insert dime : ")))
@@ -51,19 +55,21 @@ def run():
     curr_milk = resources['milk']
     curr_coffee = resources['coffee']
     money = 0
-    
+
     stop = False
 
     while not stop:
         report(money, curr_water, curr_milk, curr_coffee)
-        drink = input("What coffe would you like to make? (espresso/latte/cappuccino) : ")
+        drink = input(
+            "What coffe would you like to make? (espresso/latte/cappuccino) :")
         if drink.lower() == "report":
             report(money, curr_water, curr_milk, curr_coffee)
             run()
         elif drink.lower() == "off":
             print("Program Turned OFF!")
             return
-        water, milk, coffee, res = checkres(drink.lower(), curr_water, curr_milk, curr_coffee)
+        water, milk, coffee, res = checkres(
+            drink.lower(), curr_water, curr_milk, curr_coffee)
         if res != False:
             income, change = check_money(MENU[drink.lower()]['cost'])
             # TODO 7 Remove recources needed then print drink served and repeat the function.
@@ -87,5 +93,6 @@ def run():
         if status.lower() == "n":
             print("Program Ended!")
             stop = True
-    
+
+
 run()

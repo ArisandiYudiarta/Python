@@ -1,0 +1,15 @@
+# Just in case if my dumbass forgot how to add a python lib in vscode
+
+# creating virtual environtment
+python -m venv <project dir here>
+
+# changing acess to be able to execute scripts (auto reverted back after done)
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
+
+# activating the scripts
+venv\scripts\activate
+
+# install the package
+# select the venv (Ctrl+Shift+P => Python:Select Interpreter => enter Interpreter path => find... => find folder 'venv' > Scripts > select file 'python.exe')
+
+# run the project file normally
