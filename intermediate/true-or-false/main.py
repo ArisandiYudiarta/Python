@@ -14,5 +14,4 @@ question = QuizBrain(question_bank)
 while question.still_has_question():
     question.next_q()
 print("Congratulation! You completed the entire quiz!")
-print(
-    f"Your final score is {question.user_score} out of {question.question_number}")
+print(f"Your final score is {question.user_score} out of {question.question_number}")
