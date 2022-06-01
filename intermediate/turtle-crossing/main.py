@@ -16,14 +16,11 @@ screen.listen()
 screen.onkeypress(player.move, "Up")
 
 game_is_on = True
-iteration = 0
+
 while game_is_on:
 
-    if iteration == 6:
-        car.spawn()
-        iteration -= 6
+    car.spawn()
     car.move()
-    iteration += 1
 
     # Detecting collitions with the cars
     for c in car.cars:

@@ -12,11 +12,10 @@ class Player(Turtle):
         self.seth(90)
         self.penup()
         self.goal = FINISH_LINE_Y
-        self.goto(STARTING_POSITION)
+        self.resetpos()
 
     def move(self):
         self.forward(MOVE_DISTANCE)
-    
+
     def resetpos(self):
         self.goto(STARTING_POSITION)
-
