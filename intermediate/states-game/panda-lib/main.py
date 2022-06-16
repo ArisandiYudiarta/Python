@@ -64,7 +64,11 @@
 # squirrel_data = pd.DataFrame(squirrel_data_dict)
 # squirrel_data.to_csv("squirrel_data.csv")
 
-l1 = ["one", "two", "three", "four"]
-l2 = ["one", "two"]
+# l1 = ["one", "two", "three", "four"]
+# l2 = ["one", "two"]
 
-print(list(set(l1) - set(l2)))
+# print(list(set(l1) - set(l2)))
+
+# looping through rows of data frame============= 
+
+

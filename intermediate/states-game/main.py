@@ -23,6 +23,17 @@ while game_running:
     ).title()
 
     if answer_state == "Exit":
+
+        # # changing the data into set in order to subtract then make it into a list
+        # unanswered_states = list(set(all_states) - set(correct_guess))
+
+        # using comprehension list (the best way?)
+        unanswered_states = [
+            state for state in all_states if state not in correct_guess
+        ]
+
+        us = pd.DataFrame(unanswered_states)
+        us.to_csv("unanswered_states.csv")
         game_running = False
     if answer_state in all_states:
         t = turtle.Turtle()
@@ -36,8 +47,6 @@ while game_running:
         game_running = False
 
 # check the unanswered states and export it into a csv file
-unanswered_states = list(set(all_states) - set(correct_guess))
-us = pd.DataFrame(unanswered_states)
-us.to_csv("unanswered_states.csv")
+
 
 turtle.exitonclick()
